@@ -1,7 +1,6 @@
 const io = require('socket.io')(9500);
 const osm = require("os-monitor");
  
- 
 io.on('connect', socket => {
     socket.emit('connected', {
         status: 'connected',
@@ -13,7 +12,6 @@ io.on('connect', socket => {
 io.on('disconnect', socket => {
     socket.emit('disconnected');
 });
- 
  
 osm.start({
     delay: 3000, // interval in ms between monitor cycles
